@@ -1,0 +1,7 @@
+region,city,country,warehouse_type,manager
+SIN51,Singapore,Singapore,Distribution Center,Daniel Lee
+DUB53,Dublin,Ireland,Fulfillment Center,Sarah Murphy
+IAD77,Washington,USA,Distribution Center,Michael Johnson
+PDX79,Portland,USA,Fulfillment Center,Emily Brown
+LHR82,London,UK,Distribution Center,James Wilson
+YYZ91,Toronto,Canada,Fulfillment Center,Olivia Smith

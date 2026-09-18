@@ -1,7 +1,7 @@
 import psycopg2
 import pandas as pd
 
-df = pd.read_csv("new_data.csv")
+df = pd.read_csv("warehouse.csv")
 
 conn = psycopg2.connect(
     host="localhost",
@@ -14,17 +14,14 @@ cursor = conn.cursor()
 
 for _, row in df.iterrows():
     cursor.execute("""
-    INSERT INTO public.sales
-    (date, region, beverages_units, food_units, electronics_units, clothes_units, tools_units)
-    VALUES (%s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO public.warehouse
+    (warehouse_id, region, capacity, warehouse_status)
+    VALUES (%s, %s, %s, %s)
     """,(
-        row["date"],
+        row['warehouse_id'],
         row["region"],
-        row["beverages_units"],
-        row["food_units"],
-        row["electronics_units"],
-        row["clothes_units"],
-        row["tools_units"],
+        row["capacity"],
+        row["warehouse_status"]
     ))
 
 conn.commit()

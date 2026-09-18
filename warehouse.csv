@@ -1,0 +1,7 @@
+warehouse_id,region,capacity,warehouse_status
+WH001,SIN51,5000,Active
+WH002,DUB53,3500,Active
+WH003,IAD77,6000,Active
+WH004,PDX79,4000,Maintenance
+WH005,LHR82,4500,Active
+WH006,YYZ91,3000,Active
