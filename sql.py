@@ -1,7 +1,7 @@
 import psycopg2
 import pandas as pd
 
-df = pd.read_csv("warehouse.csv")
+df = pd.read_csv("regions.csv")
 
 conn = psycopg2.connect(
     host="localhost",
@@ -15,7 +15,7 @@ cursor = conn.cursor()
 for _, row in df.iterrows():
     cursor.execute("""
     INSERT INTO public.warehouse
-    (warehouse_id, region, capacity, warehouse_status)
+    (region, city, country, warehouse_type, manager)
     VALUES (%s, %s, %s, %s)
     """,(
         row['warehouse_id'],
@@ -28,4 +28,3 @@ conn.commit()
 cursor.close()
 
 conn.close()
-print("CSV imported")
